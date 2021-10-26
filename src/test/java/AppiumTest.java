@@ -17,7 +17,7 @@ public class AppiumTest {
 
 
     @BeforeEach
-    public static void enterApp() throws MalformedURLException {
+    public void enterApp() throws MalformedURLException {
         //set up
         DesiredCapabilities capabilities = new DesiredCapabilities();
         // local appium
@@ -135,7 +135,7 @@ public class AppiumTest {
     }
 
     @AfterEach
-    public static void quit()
+    public void quit()
     {
         driver.quit();
     }
