@@ -16,8 +16,8 @@ public class AppiumTest {
     static WebDriverWait wait;
 
 
-    @BeforeEach
-    public void enterApp() throws MalformedURLException {
+    @BeforeAll
+    static void enterApp() throws MalformedURLException {
         //set up
         DesiredCapabilities capabilities = new DesiredCapabilities();
         // local appium
@@ -119,7 +119,15 @@ public class AppiumTest {
         //enter poll
         driver.findElement(By.xpath("//android.view.View[@content-desc=\"Poll Of The Week\"]")).click();
         //choose poll
-        driver.findElement(By.xpath("//android.view.View[@content-desc=\"Choose Answer poa 06 October 2021\"]/android.view.View[3]/android.widget.Image")).click();
+        try {
+            driver.findElement(By.xpath("//android.view.View[@content-desc=\"Choose Answer poa 26 October 2021\"]/android.view.View[3]/android.widget.Image")).click();
+        }
+        catch (Exception e){
+            System.out.println("Poll not found");
+            //go home
+            driver.findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]")).click();
+            return;
+        }
         //choose answer and confirm
         driver.findElement(By.xpath("//android.view.View[@content-desc=\"1\"]/android.view.View[1]/android.widget.Image")).click();
         driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget." +
@@ -134,8 +142,8 @@ public class AppiumTest {
         driver.findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]")).click();
     }
 
-    @AfterEach
-    public void quit()
+    @AfterAll
+    static void quit()
     {
         driver.quit();
     }
