@@ -120,7 +120,7 @@ public class AppiumTest {
         driver.findElement(By.xpath("//android.view.View[@content-desc=\"Poll Of The Week\"]")).click();
         //choose poll
         try {
-            driver.findElement(By.xpath("//android.view.View[@content-desc=\"Choose Answer poa 26 October 2021\"]/android.view.View[3]/android.widget.Image")).click();
+            driver.findElement(By.xpath("//android.view.View[@content-desc=\"Choose Answer poa 25 October 2021\"]/android.view.View[3]/android.widget.Image")).click();
         }
         catch (Exception e){
             System.out.println("Poll not found");
