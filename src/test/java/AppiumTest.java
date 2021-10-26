@@ -80,7 +80,7 @@ public class AppiumTest {
 
     @Test
     public void checkSite() throws InterruptedException, MalformedURLException {
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         //enter site
         driver.findElement(By.xpath("//android.view.View[@content-desc=\"android#\"]/android.view.View")).click();
         //accept cookies
