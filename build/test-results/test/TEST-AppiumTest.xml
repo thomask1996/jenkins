@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AppiumTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-25T11:40:12" hostname="IL-THOKA-7290" time="28.821">
+<testsuite name="AppiumTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-25T12:35:38" hostname="IL-THOKA-7290" time="24.727">
   <properties/>
-  <testcase name="checkSite()" classname="AppiumTest" time="28.821"/>
+  <testcase name="checkSite()" classname="AppiumTest" time="24.727"/>
   <system-out><![CDATA[Banner never showed
 Title is ok: Official FC Barcelona Website
 ]]></system-out>
-  <system-err><![CDATA[Oct 25, 2021 2:40:01 PM io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
+  <system-err><![CDATA[Oct 25, 2021 3:35:27 PM io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
 INFO: Detected dialect: OSS
 ]]></system-err>
 </testsuite>

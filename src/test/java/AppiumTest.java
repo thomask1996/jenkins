@@ -16,7 +16,7 @@ public class AppiumTest {
     static WebDriverWait wait;
 
 
-    @BeforeAll
+    @BeforeEach
     public static void enterApp() throws MalformedURLException {
         //set up
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -75,7 +75,7 @@ public class AppiumTest {
         capabilities.setCapability("automationName", "UiAutomator2");
         capabilities.setCapability("autoGrantPermissions", true);
         URL url = new URL("http://localhost:4723/wd/hub");
-        driver = new AndroidDriver<MobileElement>(url , capabilities);
+        driver = new AndroidDriver<MobileElement>(url, capabilities);
     }
 
     @Test
@@ -94,14 +94,12 @@ public class AppiumTest {
         }
         try {
             driver.findElement(By.xpath("//*[@id=\"close_DFP_href\"]/img")).click();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Banner never showed");
         }
         try {
             driver.findElement(By.xpath("//*[@id=\"fcbarcelona-button-accept\"]")).click();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Cookies already accepted");
         }
         Thread.sleep(2000);
@@ -136,8 +134,9 @@ public class AppiumTest {
         driver.findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]")).click();
     }
 
-    @AfterAll
-    public static void quit(){
+    @AfterEach
+    public static void quit()
+    {
         driver.quit();
     }
 }
